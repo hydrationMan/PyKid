@@ -5,3 +5,4 @@ lib/bot/token.0
 .vscode
 .mypy_cache
 .DS_Store
+doc.txt

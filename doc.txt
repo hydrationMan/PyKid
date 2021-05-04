@@ -35,6 +35,8 @@ May 3rd, 2021: managed to get a V E R Y broken purge command implimented which i
 May 4th, 2021: Dear god i dislike the pun, didnt manage to fix or add any additional commands today.
 
 
+Heres a github link if you feel like getting an up to date version https://github.com/hydrationman/PyKid
+
 Dependencies(pip3):
 discord.py
 asyncio
