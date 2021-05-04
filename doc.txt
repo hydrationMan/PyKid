@@ -1,0 +1,42 @@
+"yellow": "0xFAFC00",   
+"purple": "0x8d00ff",  
+"green": "0x04ff00",  
+"blue": "0x0000ff"
+#ignore above
+
+Currently/Previously Implemented features:
+* Help function
+* Additional Commands
+* Interacting with discord API
+* Bootable bot
+
+To Be Done:
+* Figure out an sqlite3 db based levelling system(Scary)
+* Impliment the rest of HatKidBot's Commands (That I Can)
+* 
+
+Development Log:
+(After Restarting because something was very broken)
+April 19th, 2021: Bot is now bootable
+April 20th, 2021: working towards getting commands working
+April 21st, 2021: Bot is now accepting commands
+April 22nd, 2021: Adding additional commands in the form of Cogs
+April 23rd, 2021: didnt manage to change anything today 
+April 24th, 2021: Managed to get one very simple cog working with an automatic loader that i definitely didnt get inspired from stackoverflow.
+April 25th, 2021: Didnt manage to create any new breakthroughs
+April 26th, 2021: again, didnt manage to create any new breakthroughs
+April 27th, 2021: managed to impliment an sqlite3 database with an automatic comit system
+April 28th, 2021: Got code to start logging xp with a random integer between 10,20 per message and notify the channel of the last message that rewarded the XP that user has leveled up
+April 29th, 2021: Update happened to discord.py, DB system no longer functions correctly, commented out or deleted for now
+April 30th, 2021: nothing new to report
+May 1st, 2021: Was busy in the weekend, forgot to work on it
+May 2nd, 2021: Was busy in the weekend, forgot to work on it
+May 3rd, 2021: managed to get a V E R Y broken purge command implimented which i later fixed by changing an Uppercase 'L' to a Lowercase 'l'
+May 4th, 2021: Dear god i dislike the pun, didnt manage to fix or add any additional commands today.
+
+
+Dependencies(pip3):
+discord.py
+asyncio
+apscheduler
+discord-ext-menus
