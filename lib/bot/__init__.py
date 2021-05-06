@@ -87,21 +87,30 @@ class Bot(BotBase):
         if err == "on_command_error":
             await args[0].send("Error.")
 
-        await self.stdout.send("Error.")
+        await self.stdout.send(exc)
+        print(exc)
         raise
 
     async def on_command_error(self, ctx, exc):
         if isinstance(exc, CommandNotFound):
-            await ctx.send("Invalid Command")
+            await ctx.send("Command Not Found, or im dying.")
+            await self.stdout.send(exc)
+            print(exc)
 
         elif isinstance(exc, MissingRequiredArgument):
-            await ctx.send("Argument(s) Missing")
+            await ctx.send("I need an additional argument you spoon")
+            await ctx.send(exc)
+            print(exc)
 
         elif isinstance(exc.original, HTTPException):
-            await ctx.send("SendMessage Error.")
+            await ctx.send("Cannot comply, The user you're trying to ban may have administrative permissions. Or something is terribly wrong")
+            await ctx.send(exc)
+            print(exc)
 
         elif isinstance(exc.original, Forbidden):
-            await ctx.send("I do not have permission to do that/Network Error")
+            await ctx.send("Cannot comply, Forbidden request.")
+            await ctx.send(exc)
+            print(exc)
 
         elif hasattr(exc, "original"):
             raise exc.original
@@ -137,7 +146,7 @@ class Bot(BotBase):
             #await channel.send(file=discord.File(".data/assets/boop.gif"))
             self.ready = True
             await self.stdout.send("Online")
-            await self.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="you stupid fucks"))
+            await self.change_presence(status=discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name="you stupid fucks"))
             print("Bot Ready")
             
 
