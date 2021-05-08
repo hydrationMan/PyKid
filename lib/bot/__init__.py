@@ -2,6 +2,7 @@ import os
 import time
 import random
 import discord
+import logging
 from ..db import db 
 from glob import glob
 from asyncio import sleep
@@ -16,6 +17,10 @@ from discord.errors import HTTPException, Forbidden
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord.ext.commands import (CommandNotFound, BadArgument, MissingRequiredArgument)
 
+logging.basicConfig(level=logging.INFO)
+#handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+#handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+#logger.addHandler(handler)
 
 PREFIX = "+"
 OWNER_IDS = [344291973030608897]
@@ -83,11 +88,10 @@ class Bot(BotBase):
     async def on_disconnect(self):
         print("Bot Disconnected")
 
-    async def on_error(self, err, *args, **kwargs):
+    async def on_error(exc, self, err, *args, **kwargs):
         if err == "on_command_error":
             await args[0].send("Error.")
 
-        await self.stdout.send(exc)
         print(exc)
         raise
 
@@ -155,15 +159,8 @@ class Bot(BotBase):
 
 
     async def on_message(self, message):
-            if not message.author.bot:
-                await self.process_commands(message)
-            if str(message.channel) != CHANNEL_NAME:
-                return
-            if not message.content:
-                return
-
-    
-            
+        print(str(discord.User.display_name))
         
+      
 
 bot = Bot()
