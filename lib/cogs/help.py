@@ -1,11 +1,19 @@
+# Imports
 from typing import Optional
-
 from discord import Embed
 from discord.utils import get
 from discord.ext.menus import MenuPages, ListPageSource
 from discord.ext.commands import Cog
 from discord.ext.commands import command
 
+
+# Help Command, shamefully stolen from (remember person later)
+#####NOT MINE#####
+#####NOT MINE#####
+#####NOT MINE#####
+#####NOT MINE#####
+#####NOT MINE#####
+#####YOU HAVE BEEN WARNED#####
 
 def syntax(command):
 	cmd_and_aliases = "|".join([str(command), *command.aliases])
